@@ -9,7 +9,7 @@ void main(List<String> arguments) {
 }
 
 
-class Funcionario{
+class Funcionario implements baterPonto{
   String nome;
   double salario;
   
@@ -22,6 +22,11 @@ class Funcionario{
     print("Nao precisa aumentar o salário.");
   }
  }
+
+   @override
+  void bateuOponto() {
+    print("$nome bateu o ponto como funcionário.");
+  }
 }
 
 class Diretor extends Funcionario{
@@ -31,4 +36,9 @@ class Diretor extends Funcionario{
   designacao(){
   print("O $nome tem a função de $funcao por isso que ele recebe $salario");
   }
+}
+
+abstract class baterPonto  {
+  void bateuOponto();
+
 }
